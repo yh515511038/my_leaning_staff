@@ -1,10 +1,17 @@
 from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
+from flaskblog.config import Config
 
 
-app = Flask(__name__)
-db = SQLAlchemy(app)
+db = SQLAlchemy()
 
-app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///data.db'
 
-from flaskblog.routes import *
+def create_app(conig_class=Config):
+    app = Flask(__name__)
+    app.config.from_object(Config)
+    db.init_app(app)
+    
+    from flaskblog.main.routes import main
+    app.register_blueprint(main)
+    
+    return app
