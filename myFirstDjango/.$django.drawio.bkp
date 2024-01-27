@@ -1,0 +1,60 @@
+<mxfile host="Electron" modified="2024-01-27T06:32:24.235Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/22.0.2 Chrome/114.0.5735.289 Electron/25.8.4 Safari/537.36" etag="tVuLLGfAEzWGGfaEVepi" version="22.0.2" type="device">
+  <diagram name="第 1 页" id="KC8-3gzAlz_IjmlQ2rIc">
+    <mxGraphModel dx="1098" dy="828" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="uSv85FcfOCcnFGKY_BnF-3" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="uSv85FcfOCcnFGKY_BnF-1" target="uSv85FcfOCcnFGKY_BnF-2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="uSv85FcfOCcnFGKY_BnF-4" value="Request" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="uSv85FcfOCcnFGKY_BnF-3">
+          <mxGeometry x="0.0364" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="uSv85FcfOCcnFGKY_BnF-1" value="Client" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="180" y="100" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="uSv85FcfOCcnFGKY_BnF-6" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="uSv85FcfOCcnFGKY_BnF-2" target="uSv85FcfOCcnFGKY_BnF-5">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="uSv85FcfOCcnFGKY_BnF-2" value="Django Server" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="410" y="100" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="uSv85FcfOCcnFGKY_BnF-9" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="uSv85FcfOCcnFGKY_BnF-5" target="uSv85FcfOCcnFGKY_BnF-8">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="uSv85FcfOCcnFGKY_BnF-12" value="Find the app and urls" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="uSv85FcfOCcnFGKY_BnF-9">
+          <mxGeometry x="-0.1" y="3" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="uSv85FcfOCcnFGKY_BnF-5" value="urls.py" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="410" y="236" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="uSv85FcfOCcnFGKY_BnF-11" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="uSv85FcfOCcnFGKY_BnF-8" target="uSv85FcfOCcnFGKY_BnF-10">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="uSv85FcfOCcnFGKY_BnF-13" value="Find the views using the app&#39;s url" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="uSv85FcfOCcnFGKY_BnF-11">
+          <mxGeometry x="-0.325" y="-3" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="uSv85FcfOCcnFGKY_BnF-8" value="urls.py(App)" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="410" y="376" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="uSv85FcfOCcnFGKY_BnF-14" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" edge="1" parent="1" source="uSv85FcfOCcnFGKY_BnF-10" target="uSv85FcfOCcnFGKY_BnF-1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="uSv85FcfOCcnFGKY_BnF-15" value="Proess request and return response to client" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="uSv85FcfOCcnFGKY_BnF-14">
+          <mxGeometry x="-0.6295" relative="1" as="geometry">
+            <mxPoint x="-67" y="-196" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="uSv85FcfOCcnFGKY_BnF-10" value="views.py" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="410" y="516" width="120" height="60" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
