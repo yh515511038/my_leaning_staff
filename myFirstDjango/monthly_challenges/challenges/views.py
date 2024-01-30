@@ -20,7 +20,12 @@ monthly_challenges = {
 
 # Create your views here.
 def index(request):
-    return HttpResponse('<h1>Hello world!</h1>')
+    li_items = ""
+    months = list(monthly_challenges.keys())
+    for month in months:
+        redirect_path = reverse('monthly-challenge', args=[month])
+        li_items += f'<li><a href="{redirect_path}">{month.capitalize()}</a></li>'
+    return HttpResponse(f'<ul>{li_items}</ul>')
 
 def january(request):
     return HttpResponse('<h1>January</h1>')
@@ -31,7 +36,9 @@ def february(request):
 def monthly_challenge(request, month):
     try:
         challenge_text = monthly_challenges[month]
-        return HttpResponse(f'<h1>{challenge_text}</h1>')
+        return render(request, 'challenges/challenges.html')
+        # response_data = render_to_string('challenges/challenges.html')
+        # return HttpResponse(response_data)
     except:
         return HttpResponseNotFound("Month is invalid!")
 
