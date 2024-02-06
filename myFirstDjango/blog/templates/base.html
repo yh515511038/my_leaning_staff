@@ -1,0 +1,20 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="{% static "layout.css" %}">
+  {% block css_file %} {% endblock %}
+  <title>{% block title %} {% endblock %}</title>
+</head>
+<body>
+  <nav>
+      <a href="{% url 'index' %}" class="nav-blog">Max's Blog</a>
+      <a href="{% url 'posts' %}" class="nav-posts">All Posts</a>
+  </nav>
+     
+    {% block content %} {% endblock %}
+</body>
+</html>

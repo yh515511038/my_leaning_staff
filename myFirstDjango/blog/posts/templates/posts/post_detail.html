@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block css_file %}
+<link rel="stylesheet" href="{% static 'posts/post_detail.css' %}">
+{% endblock %}
+
+{% block title %} {{ post.title }} {% endblock %}
+
+{% block content %}
+  <section class="section-post-detail">
+    <div class="post-title-container">
+      <p class="post-title">{{ post.title | title }}</p>
+      <div class="post-desc">
+        <img src="{% static 'posts/images/'|add:post.image %}" alt="" class="post-image">
+        <div class="post-desc-text">
+          <p class="post-author">By {{ post.author }}</p>
+          <p class="post-posted">Last updated on {{ post.posted }}</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="post-content">
+      <p>{{ post.content | linebreaks }}<p>
+    </div>
+  </section>
+{% endblock %}

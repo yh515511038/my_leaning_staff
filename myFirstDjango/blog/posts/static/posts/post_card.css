@@ -1,0 +1,49 @@
+.post-container {
+  width: 80%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 1.6rem;
+}
+
+.post-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 14rem;
+  padding: 1.6rem 1rem;
+  box-shadow: 3px 3px 10px 5px rgba(0,0,0, 0.25);
+  border-radius: 10px;
+}
+
+.post-image {
+  margin-bottom: 0.8rem;
+  width: 5rem;
+  height: 5rem;
+  border-radius: 5rem;
+}
+
+.post-title {
+  margin-bottom: 0.8rem;
+  font-size: 1rem;
+}
+
+.post-desc {
+  font-size: 0.8rem;
+}
+
+.post-link,
+.post-link:visited {
+  display: inline-block;
+  text-decoration: none;
+  color: #333;
+}
+
+.post-link:hover {
+  color: #fff;
+  font-weight: bold;
+  background-color: #5f00ca;
+  border-radius: 10px;
+}
