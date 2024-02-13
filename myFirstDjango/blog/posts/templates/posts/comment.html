@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block css_file %}
+  <link rel="stylesheet" href="{% static 'posts/comment.css' %}">
+{% endblock %}
+
+{% block title %}Post Comment{% endblock %}
+
+{% block content %}
+  <form action="{% url 'post-detail' post.slug %}" method="POST">
+    {% csrf_token %}
+    <div class="form-control">
+      {{ form.title.label }}
+      {{ form.title }}
+    </div>
+    <div class="form-control">
+      {{ form.comment.label }}
+      {{ form.comment }}
+    </div>
+    <div class="form-control">
+      {{ form.rating.label }}
+      {{ form.rating }}
+    </div>
+    <button type="submit">Submit</button>
+  </form>
+{% endblock %}

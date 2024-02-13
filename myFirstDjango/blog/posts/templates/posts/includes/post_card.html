@@ -2,8 +2,8 @@
 
 <a href="{% url 'post-detail' post.slug %}" class="post-link">
   <div class="post-card">
-    <img src="{% static 'posts/images/'|add:post.image %}" alt="post-image" class="post-image">
+    <img src="{{ post.image.url }}" alt="post-image" class="post-image">
     <h3 class="post-title">{{ post.title }}</h3>
-    <p class="post-desc">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Est dignissimos voluptatem laudantium quae et itaque rem, laborum obcaecati. Dicta totam incidunt, ab fuga et eveniet accusamus! In a ipsum natus.</p>
+    <p class="post-desc">{{ post.excerpt }}</p>
   </div>
 </a>

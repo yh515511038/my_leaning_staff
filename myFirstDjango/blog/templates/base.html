@@ -11,8 +11,9 @@
 </head>
 <body>
   <nav>
-      <a href="{% url 'index' %}" class="nav-blog">Max's Blog</a>
+      <a href="{% url 'index' %}" class="nav-blog">My Blog</a>
       <a href="{% url 'posts' %}" class="nav-posts">All Posts</a>
+      <a href="{% url 'read-later' %}" class="nav-posts">Stored Posts</a>
   </nav>
      
     {% block content %} {% endblock %}
