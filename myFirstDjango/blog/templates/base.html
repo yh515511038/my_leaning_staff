@@ -11,9 +11,12 @@
 </head>
 <body>
   <nav>
-      <a href="{% url 'index' %}" class="nav-blog">My Blog</a>
-      <a href="{% url 'posts' %}" class="nav-posts">All Posts</a>
-      <a href="{% url 'read-later' %}" class="nav-posts">Stored Posts</a>
+      <a href="{% url 'index' %}" class="nav-home">Home</a>
+      <div class="nav-posts">
+        <a href="{% url 'posts' %}">All Posts</a>
+        <a href="{% url 'read-later' %}">Stored Posts</a>
+        <a href="{% url 'all-tags' %}">All Tags</a>
+      </div>
   </nav>
      
     {% block content %} {% endblock %}

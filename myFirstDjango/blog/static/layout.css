@@ -6,7 +6,7 @@
 }
 
 html {
-  font-family: 'Lato', sans-serif;
+  font-family: Lato, sans-serif;
   color:#333;
 }
 
@@ -32,21 +32,35 @@ nav {
   justify-content: space-between  ;
 }
 
-nav a {
-  color: #fff;
-}
-
-.nav-blog {
+.nav-home,
+.nav-posts a {
   font-size: 1.2rem;
   font-weight: bold;
 }
 
+nav a,
+nav a:visited {
+  color: #fff;
+  display: block;
+}
+
+nav a:hover,
+nav a:active {
+  color: #e8dcf7;
+  font-style: italic;
+}
+
+.nav-posts {
+  display: flex;
+  gap: 1rem;
+}
+
 h1 {
-  margin-bottom: 25px;
+  margin: 2rem 0;
 }
 
 h2 {
-  font-size: 1.2rem;
+  font-size: 1.5rem;
 }
 
 h3 {

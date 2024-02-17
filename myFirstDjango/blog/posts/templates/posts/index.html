@@ -11,7 +11,7 @@
 {% block content %}
   <section class="header-section">
     <div class="blog-author-info">
-      <img src="{% static 'posts/images/bb-bg1.jpg' %}" alt="max's image" class="author-image">
+      <a href="{% url 'photos' %}"><img src="{% static 'posts/images/bb-bg1.jpg' %}" alt="max's image" class="author-image"></a>
       <h1 class="blog-title">MY BLOG</h1>
     </div>
     <p class="blog-desc">Hi, I'm Dev and I love to blog about tech and the world!</p>
@@ -19,10 +19,6 @@
   
   <section class="main">
     <h2 class="">My Latest Thoughts</h2>
-    <div class="post-container">
-      {% for post in posts %}
-        {% include "posts/includes/post_card.html" %}
-      {% endfor %}
-    </section>
-  </div>
+    {% include "posts/includes/post_card.html" %}
+  </section>
 {% endblock %}

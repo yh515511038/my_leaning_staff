@@ -30,7 +30,7 @@
         <form class="read-later-form" action="{% url 'read-later' %}" method="POST">
           {% csrf_token %}
           <input type="hidden" name="post_id" value="{{ post.id }}">
-          <button>Read Later</button>
+          <button>{% if read_later %}Cancel{% else %}Read Later{% endif %}</button>
         </form>
       </div>
       <div class="post-desc">
@@ -43,12 +43,16 @@
     </div>
 
     <div class="post-content">
-      <p>{{ post.content | linebreaks }}<p>
+      {{ post.content }}
     </div>
   </section>
 
   <section class="comments-section">
-    {% if comments %}
+    
+      
+      {% if comments %}
+      <div class="comment-left">
+      <h2 class="comments-title">Comments</h2>
       <ul class="comments-list">
         {% for comment in comments %}
           <li>
@@ -57,21 +61,23 @@
           </li>
         {% endfor %}
       </ul>
-    {% endif %}
-  </section>
+    </div>
+      {% endif %}
+    
 
-  <section class="comment-section">
-    <h3 class="comment-ttile">Leave Your Comment Below</h3>
-    <form id="comment-form" action="{% url 'post-detail' post.slug %}" method="POST">
-      {% csrf_token %}
-      {% for field in comment_form %}
-        <div class="form-control {% if field.errors %}invalid{% endif %}">
-          {{ field.label_tag }}
-          {{ field }}
-          {{ field.errors }}
-        </div>
-      {% endfor %}
-      <button>Save Comment</button>
-    </form>
+    <div class="comment">
+      <h3 class="comment-ttile">Leave Your Comment Below 😘</h3>
+      <form id="comment-form" action="{% url 'post-detail' post.slug %}" method="POST">
+        {% csrf_token %}
+        {% for field in comment_form %}
+          <div class="form-control {% if field.errors %}invalid{% endif %}">
+            {{ field.label_tag }}
+            {{ field }}
+            {{ field.errors }}
+          </div>
+        {% endfor %}
+        <button>Save Comment</button>
+      </form>
+    </div>
   </section>
 {% endblock %}

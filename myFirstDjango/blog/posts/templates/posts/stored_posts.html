@@ -1,9 +1,11 @@
 {% extends 'base.html' %}
+{% load static %}
+
+{% block css_file %}
+    <link rel="stylesheet" href="{% static 'posts/post_card.css' %}">
+{% endblock %}
 
 {% block content %}
-  {% for post in read_later_posts %}
-    <a class="read-later-post" href="{% url 'post-detail' post.slug %}">
-      {{ post.title }} - {{ post.author }}
-    </a>
-  {% endfor %}
+  <h1>Posts To Read Later</h1>
+  {% include 'posts/includes/post_card.html' %}
 {% endblock %}

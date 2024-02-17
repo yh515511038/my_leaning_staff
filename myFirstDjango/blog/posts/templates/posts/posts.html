@@ -5,12 +5,10 @@
   <link rel="stylesheet" href="{% static 'posts/posts.css' %}">
   <link rel="stylesheet" href="{% static 'posts/post_card.css' %}">
   {% endblock %}
+
 {% block title %} All Posted Posts we have! {% endblock %}
 
 {% block content %}
-    <div class="post-container">
-      {% for post in posts %}
-      {% include "posts/includes/post_card.html" %}
-      {% endfor %}
-    </div>
+<h1>All Posts</h1>
+  {% include "posts/includes/post_card.html" %}
 {% endblock %}

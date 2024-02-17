@@ -32,6 +32,10 @@ ALLOWED_HOSTS = []
 
 INSTALLED_APPS = [
     "posts",
+    "photos",
+    "imagekit",
+    "ckeditor",
+    "ckeditor_uploader",
     "django.contrib.admin",
     "django.contrib.auth",
     "django.contrib.contenttypes",
@@ -112,7 +116,9 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
 
-STATIC_URL = "static/"
+# STATIC_ROOT = BASE_DIR / "static"
+
+STATIC_URL = "/static/"
 
 STATICFILES_DIRS = [
   BASE_DIR / "static"
@@ -126,3 +132,22 @@ MEDIA_URL = "/user-media/"
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
+
+# CKEditor Settings
+CKEDITOR_UPLOAD_PATH = 'uploads/'
+CKEDITOR_IMAGE_BACKEND = "pillow"
+CKEDITOR_JQUERY_URL = '//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js' 
+
+CKEDITOR_CONFIGS = {
+    'default':
+        {
+            'toolbar': 'full',
+            'width': 'auto',
+            'extraPlugins': ','.join([
+                'codesnippet',
+            ]),
+            # 'contentsCss': ['/static/layout.css'],
+            # 'format_tags': 'p;h1;h2;h3;h4;h5;h6;pre',  # Allow only these tags
+            # 'templates_replaceContent': False,  # Do not wrap content in <p> tags
+        },
+}

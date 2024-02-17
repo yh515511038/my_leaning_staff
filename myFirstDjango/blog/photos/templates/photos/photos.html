@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block css_file %}
+<link rel="stylesheet" href="{% static 'photos/photos.css' %}">
+{% endblock %}
+
+{% block content %}
+    <div class="photos-container">
+        {% for photo_name, photo in photo_dict.items %}
+            <div class="photo-item">
+                <h3>{{ photo_name | upper }}</h3>
+                <a href="{% url 'banban' photo.id %}"><img src="{{ photo.image.url }}" class="first-photo"></a>
+            </div>
+        {% endfor %}
+    </div>
+{% endblock %}

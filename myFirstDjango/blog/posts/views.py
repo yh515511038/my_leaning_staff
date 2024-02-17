@@ -6,9 +6,11 @@ from django.urls import reverse
 from django.views import View
 from django.views.generic import ListView, DetailView
 from django.views.generic.edit import CreateView
+from django.contrib.messages.views import SuccessMessageMixin
 
-from posts.models import Post, Comment
-from posts.forms import CommentForm
+from .models import Post, Comment, Tag
+from .forms import PostForm, CommentForm
+
 
 # Create your views here.
 class IndexView(ListView):
@@ -19,7 +21,7 @@ class IndexView(ListView):
 
   def get_queryset(self):
     queryset = super().get_queryset()
-    return queryset[:3]   # Get 3 latest posts
+    return queryset[:4]   # Get 3 latest posts
 
 
 class PostsView(ListView):
@@ -32,11 +34,18 @@ class PostsView(ListView):
 class PostDetailView(View):
   def get(self, request, slug):
     post = Post.objects.get(slug=slug)
+    stored_posts = request.session.get("stored_posts")
+    if stored_posts:
+      is_read_later = post.id in stored_posts
+    else:
+      is_read_later = False
+      
     return render(request, "posts/post_detail.html", {
       "post": post,
       "tags": post.tags.all(),
       "comments": post.comments.all().order_by("-id"),
-      "comment_form": CommentForm()
+      "comment_form": CommentForm(),
+      "read_later": is_read_later,
     })
 
   def post(self, request, slug):    # slug is already a part of URL from urls.py
@@ -87,7 +96,7 @@ class ReadLaterView(View):
       read_later_posts = Post.objects.filter(id__in=stored_posts)
 
     return render(request, "posts/stored_posts.html", {
-      "read_later_posts": read_later_posts
+      "posts": read_later_posts
     })
   
   def post(self, request):
@@ -100,6 +109,39 @@ class ReadLaterView(View):
 
     if post_id not in stored_posts:
       stored_posts.append(post_id)
-      request.session["stored_posts"] = stored_posts
+    else:
+      stored_posts.remove(post_id)
     
+    request.session["stored_posts"] = stored_posts
     return HttpResponseRedirect("/")
+
+
+class TagListView(ListView):
+  template_name = "posts/tags.html"
+  model = Tag
+  context_object_name = "tags"
+
+
+class TaggedPostListView(ListView):
+  template_name = "posts/tagged_posts.html"
+  model = Post
+  context_object_name = "posts"
+  
+  def get_queryset(self):
+    tag = Tag.objects.get(id=self.kwargs["tag_id"])
+    return tag.posts.all()
+    
+  def get_context_data(self, **kwargs):
+    context = super().get_context_data(**kwargs)
+    context["tag"] = Tag.objects.get(id=self.kwargs["tag_id"])
+    return context
+
+
+class AddPost(SuccessMessageMixin, CreateView):
+    form_class = PostForm
+    model = Post
+    template_name = "posts/add_posts.html"
+    success_message = "Added Successfully"
+
+    def get_success_url(self):
+        return reverse('add_post')
