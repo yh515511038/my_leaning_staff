@@ -142,9 +142,23 @@ CKEDITOR_CONFIGS = {
     'default':
         {
             'toolbar': 'full',
+        #   'toolbar': 'Custom',
+        #   'toolbar_Custom': [
+        #       {'name': 'basicstyles', 'items': ['Bold', 'Italic', 'Underline', 'Strike', 'RemoveFormat']},
+        #       {'name': 'paragraph', 'items': ['NumberedList', 'BulletedList', '-', 'Blockquote']},
+        #       {'name': 'links', 'items': ['Link', 'Unlink']},
+        #       {'name': 'styles', 'items': ['Format']},
+        #       {'name': 'document', 'items': ['Source', '-', 'Preview']},
+        #       '/',
+        #       {'name': 'insert', 'items': ['Image', 'Table', 'HorizontalRule']},
+        #       {'name': 'tools', 'items': ['Maximize']},
+        #       {'name': 'markdown', 'items': ['Markdown']},
+        #     ],
+
             'width': 'auto',
             'extraPlugins': ','.join([
                 'codesnippet',
+                 'markdown',
             ]),
             # 'contentsCss': ['/static/layout.css'],
             # 'format_tags': 'p;h1;h2;h3;h4;h5;h6;pre',  # Allow only these tags

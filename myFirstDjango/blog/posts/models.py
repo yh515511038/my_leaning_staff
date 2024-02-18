@@ -42,7 +42,7 @@ class Post(models.Model):
     author = models.ForeignKey('Author', on_delete=models.SET_NULL, null=True, related_name="posts")
     posted = models.DateField(auto_now=True)        # Only updated after calling save() method if data already exist!
     # content = models.TextField(validators=[MinLengthValidator(10)])
-    content = RichTextUploadingField()
+    body = RichTextUploadingField()
     slug = models.SlugField(default="", blank=True, unique=True, db_index=True)
     image = ProcessedImageField(
         upload_to="posts",
