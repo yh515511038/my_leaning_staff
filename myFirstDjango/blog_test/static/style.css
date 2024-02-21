@@ -45,3 +45,12 @@ nav {
 .nav-posts .nav-item:last-child {
   margin-right: 0;
 }
+
+/* BLOG-CONTAINER PART */
+.blog-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0 3rem;
+  margin-top: 3rem;
+}

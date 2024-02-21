@@ -37,13 +37,6 @@
 }
 
 /* BLOG-CONTAINER PART */
-.blog-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 0 3rem;
-}
-
 .latest-posts {
   width: 80%;
   display: flex;
@@ -93,4 +86,90 @@
 
 .post-desc {
   font-size: 0.8rem;
+}
+
+/* POST PART */
+.comment {
+  width: 60%;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  gap: 3rem;
+
+  border: none;
+  border-radius: 12px;
+  box-shadow: 0px 2px 8px rgba(0,0,0, 0.26);
+  padding: 2rem 3rem;
+
+  position: relative;
+}
+
+.comment-title {
+  position: absolute;
+  top: 2rem;
+  left: 2rem;
+}
+
+.comment-list {
+  list-style: none;
+
+}
+
+.comment-item {
+  margin-bottom: 0.8rem;
+}
+
+.comment-leave-title {
+  margin-bottom: 1rem;
+}
+
+.comment-form {
+  display: flex;
+  flex-direction: column;
+}
+
+
+.comment-form label {
+  display: block;
+}
+
+.comment-form input,
+.comment-form textarea {
+  border-radius: 6px;
+  padding: 0.25rem 0.8rem;
+}
+
+.comment-form input:hover,
+.comment-form textarea:hover {
+  background-color: #f9f0ff;
+}
+
+.comment-form input,
+.comment-form textarea {
+  margin-bottom: 1rem;
+}
+
+.comment-form input {
+  font-size: 1rem;
+}
+
+.comment-form textarea {
+  font-size: 1.2rem;
+}
+
+.comment-button,
+.comment-button:visited {
+  padding: 0.5rem 1rem;
+  background: none;
+  border: none;
+  border-radius: 6px;
+  background-color: #7401c0;
+  color: #fff;
+  font-size: 1rem;
+}
+
+.comment-button:hover,
+.comment-button:active {
+  cursor: pointer;
+  background-color: #a628fa;
 }

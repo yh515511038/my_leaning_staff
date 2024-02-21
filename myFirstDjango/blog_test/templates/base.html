@@ -18,6 +18,11 @@
       <a class="nav-item" href="">New Post</a>
     </div>
   </nav>
-    {% block content %}{% endblock %}
+
+  {% block my-blog %}{% endblock %}
+
+  <div class="blog-container">
+    {% block blog-content %}{% endblock %}
+  </div>
 </body>
 </html>

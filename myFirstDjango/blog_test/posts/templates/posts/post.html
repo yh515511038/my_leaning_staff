@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block css_file %}<link rel="stylesheet" href="{% static 'posts/posts.css' %}">{% endblock %}
+{% block title %}Leave Your Comment!{% endblock %}
+
+{% block blog-content %}
+    <section class="comment">
+        <h3 class="comment-title">Comments</h3>
+        <ul class="comment-list">
+            <li class="comment-item">comment content 1</li>
+            <li class="comment-item">comment content 2</li>
+            <li class="comment-item">comment content 3</li>
+        </ul>
+        <div class="comment-form">
+            <h3 class="comment-leave-title">Leave Your Comment Below😘</h3>
+            <form method="POST" action="{% url 'post' %}">
+                {% csrf_token %}
+                {{ form }}
+                <button type="submit" class="comment-button">Submit</button>
+            </form>
+        </div>
+    </section>
+{% endblock %}

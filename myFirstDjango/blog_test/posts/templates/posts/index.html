@@ -5,7 +5,7 @@
 {% block css_file %}<link rel="stylesheet" href="{% static 'posts/posts.css' %}">{% endblock %}
 {% block title %}Home Page{% endblock %}
 
-{% block content %}
+{% block my-blog %}
   <div class="my-blog">
     <div class="my-blog-content">
       <img src="{% static 'posts/bb-bg1.jpg' %}" alt="author-image" class="blog-image">
@@ -16,31 +16,29 @@
     </div>
     <div class="my-blog-content-2"></div>
   </div>
+{% endblock %}
 
-  <div class="blog-container">
-    <div class="latest-posts">
-      <h2>Latest Posts</h2>
-      <div class="post-card-container">
-        <div class="post-card">
-          <img src="{% static 'posts/mountains.jpg' %}" alt="post-img" class="post-img">
-          <h3 class="post-title">Hello Django!</h3>
-          <p class="post-desc">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eum itaque praesentium neque laboriosam voluptatum commodi consequatur incidunt assumenda omnis magni. Odit error perspiciatis quaerat consequatur cumque quos animi modi placeat.</p>
-        </div>
+{% block blog-content %}
+  <div class="latest-posts">
+    <h2>Latest Posts</h2>
+    <div class="post-card-container">
+      <div class="post-card">
+        <img src="{% static 'posts/mountains.jpg' %}" alt="post-img" class="post-img">
+        <h3 class="post-title">Hello Django!</h3>
+        <p class="post-desc">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eum itaque praesentium neque laboriosam voluptatum commodi consequatur incidunt assumenda omnis magni. Odit error perspiciatis quaerat consequatur cumque quos animi modi placeat.</p>
+      </div>
 
-        <div class="post-card">
-          <img src="{% static 'posts/mountains.jpg' %}" alt="post-img" class="post-img">
-          <h3 class="post-title">Hello Django!</h3>
-          <p class="post-desc">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eum itaque praesentium neque laboriosam voluptatum commodi consequatur incidunt assumenda omnis magni. Odit error perspiciatis quaerat consequatur cumque quos animi modi placeat.</p>
-        </div>
+      <div class="post-card">
+        <img src="{% static 'posts/mountains.jpg' %}" alt="post-img" class="post-img">
+        <h3 class="post-title">Hello Django!</h3>
+        <p class="post-desc">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eum itaque praesentium neque laboriosam voluptatum commodi consequatur incidunt assumenda omnis magni. Odit error perspiciatis quaerat consequatur cumque quos animi modi placeat.</p>
+      </div>
 
-        <div class="post-card">
-          <img src="{% static 'posts/mountains.jpg' %}" alt="post-img" class="post-img">
-          <h3 class="post-title">Hello Django!</h3>
-          <p class="post-desc">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eum itaque praesentium neque laboriosam voluptatum commodi consequatur incidunt assumenda omnis magni. Odit error perspiciatis quaerat consequatur cumque quos animi modi placeat.</p>
-        </div>
+      <div class="post-card">
+        <img src="{% static 'posts/mountains.jpg' %}" alt="post-img" class="post-img">
+        <h3 class="post-title">Hello Django!</h3>
+        <p class="post-desc">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eum itaque praesentium neque laboriosam voluptatum commodi consequatur incidunt assumenda omnis magni. Odit error perspiciatis quaerat consequatur cumque quos animi modi placeat.</p>
       </div>
     </div>
-    
-  </div>
-  
 {% endblock %}
+</div>
