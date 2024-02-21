@@ -1,0 +1,23 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="{% static 'style.css' %}">
+  {% block css_file %}{% endblock %}
+  <title>{% block title %}{% endblock %}</title>
+</head>
+<body>
+  <nav>
+    <a class="nav-item" href="{% url 'index' %}">Home</a>
+    <div class="nav-posts">
+      <a class="nav-item" href="{% url 'posts' %}">All Posts</a>
+      <a class="nav-item" href="">Read Later</a>
+      <a class="nav-item" href="">New Post</a>
+    </div>
+  </nav>
+    {% block content %}{% endblock %}
+</body>
+</html>

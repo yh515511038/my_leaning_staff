@@ -20,7 +20,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = "django-insecure-#sg(p_tk_fkhqyjj4#5@mcmuvvby8=a80^_8dz3ikvo!!drs*r"
+SECRET_KEY = "django-insecure-1578)_-8!g_-6h6*@2=s7=*q=jcg&wo**56@of5fx6hetwg37f"
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -32,10 +32,6 @@ ALLOWED_HOSTS = []
 
 INSTALLED_APPS = [
     "posts",
-    "photos",
-    "imagekit",
-    "ckeditor",
-    "ckeditor_uploader",
     "django.contrib.admin",
     "django.contrib.auth",
     "django.contrib.contenttypes",
@@ -60,7 +56,7 @@ TEMPLATES = [
     {
         "BACKEND": "django.template.backends.django.DjangoTemplates",
         "DIRS": [
-            BASE_DIR / "templates"
+          BASE_DIR / "templates"
         ],
         "APP_DIRS": True,
         "OPTIONS": {
@@ -116,51 +112,14 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
 
-STATIC_ROOT = BASE_DIR / "staticfiles"
 STATIC_URL = "/static/"
 
 STATICFILES_DIRS = [
   BASE_DIR / "static"
 ]
 
-MEDIA_ROOT = "uploads"
-MEDIA_URL = "/user-media/"
-
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
-
-# CKEditor Settings
-CKEDITOR_UPLOAD_PATH = 'uploads/'
-CKEDITOR_IMAGE_BACKEND = "pillow"
-CKEDITOR_JQUERY_URL = '//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js' 
-
-CKEDITOR_CONFIGS = {
-    'default':
-        {
-            'toolbar': 'full',
-        #   'toolbar': 'Custom',
-        #   'toolbar_Custom': [
-        #       {'name': 'basicstyles', 'items': ['Bold', 'Italic', 'Underline', 'Strike', 'RemoveFormat']},
-        #       {'name': 'paragraph', 'items': ['NumberedList', 'BulletedList', '-', 'Blockquote']},
-        #       {'name': 'links', 'items': ['Link', 'Unlink']},
-        #       {'name': 'styles', 'items': ['Format']},
-        #       {'name': 'document', 'items': ['Source', '-', 'Preview']},
-        #       '/',
-        #       {'name': 'insert', 'items': ['Image', 'Table', 'HorizontalRule']},
-        #       {'name': 'tools', 'items': ['Maximize']},
-        #       {'name': 'markdown', 'items': ['Markdown']},
-        #     ],
-
-            'width': 'auto',
-            'extraPlugins': ','.join([
-                'codesnippet',
-                 'markdown',
-            ]),
-            # 'contentsCss': ['/static/layout.css'],
-            # 'format_tags': 'p;h1;h2;h3;h4;h5;h6;pre',  # Allow only these tags
-            # 'templates_replaceContent': False,  # Do not wrap content in <p> tags
-        },
-}
