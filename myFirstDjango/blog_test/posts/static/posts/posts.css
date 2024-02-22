@@ -52,9 +52,13 @@
   transform: translate(0, -1rem);
 }
 
+.latest-title {
+  margin-bottom: 1rem;
+}
+
 .post-card-container {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(4, 1fr);
   row-gap: 2rem;
   column-gap: 4rem;
 }

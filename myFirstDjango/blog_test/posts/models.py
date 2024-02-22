@@ -11,3 +11,9 @@ class Post(models.Model):
   
   def __repr__(self):
     return f"{self.title} - {self.author}"
+
+
+class Comment(models.Model):
+  username = models.CharField(max_length=50)
+  content = models.TextField()
+  post = models.ForeignKey('Post', on_delete=models.CASCADE, null=True, related_name="comments")

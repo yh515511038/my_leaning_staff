@@ -21,9 +21,9 @@
     <section class="comment">
         <h3 class="comment-title">Comments</h3>
         <ul class="comment-list">
-            <li class="comment-item">comment content 1</li>
-            <li class="comment-item">comment content 2</li>
-            <li class="comment-item">comment content 3</li>
+            {% for comment in post.comments %}
+                <li class="comment-item">{{ comment.content }}</li>
+            {% endfor %}
         </ul>
         <div class="comment-form">
             <h3 class="comment-leave-title">Leave Your Comment Below😘</h3>

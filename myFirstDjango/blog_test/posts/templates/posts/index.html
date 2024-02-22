@@ -20,7 +20,7 @@
 
 {% block blog-content %}
   <div class="latest-posts">
-    <h2>Latest Posts</h2>
+    <h2 class="latest-title">Latest Posts</h2>
     <div class="post-card-container">
       {% for post in posts %}
       <a class="post-link" href="{% url 'post' post.id %}">
