@@ -10,8 +10,8 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  width: 15rem;
+  justify-content: start;
+  width: 13rem;
   height: 18rem;
   padding: 1.6rem 1rem;
   box-shadow: 3px 3px 10px 5px rgba(0,0,0, 0.25);
@@ -25,6 +25,10 @@
   border-radius: 5rem;
 }
 
+.post-text {
+  text-align: center;
+}
+
 .post-title {
   margin-bottom: 0.8rem;
   font-size: 1rem;
@@ -33,7 +37,6 @@
 .post-desc {
   font-size: 0.8rem;
   line-height: 1.4;
-  text-align: center;
 }
 
 .post-link,

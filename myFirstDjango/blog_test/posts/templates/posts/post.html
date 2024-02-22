@@ -5,6 +5,19 @@
 {% block title %}Leave Your Comment!{% endblock %}
 
 {% block blog-content %}
+    <section class="post-section">
+        <div class="post-nav">
+            <p class="post-title">{{ post.title }}</p>
+            <div class="post-desc">
+                <img src="{{ post.image.url }}" class="post-image">
+                <span class="post-author">{{ post.author }}</span>
+                <span class="post-created">{{ post.posted }}</span>
+            </div>
+        </div>
+        <div class="post-content">
+            {{ post.content | linebreaks }}
+        </div>
+    </section>
     <section class="comment">
         <h3 class="comment-title">Comments</h3>
         <ul class="comment-list">
@@ -14,7 +27,7 @@
         </ul>
         <div class="comment-form">
             <h3 class="comment-leave-title">Leave Your Comment Below😘</h3>
-            <form method="POST" action="{% url 'post' %}">
+            <form method="POST" action="{% url 'post' post.id %}">
                 {% csrf_token %}
                 {{ form }}
                 <button type="submit" class="comment-button">Submit</button>

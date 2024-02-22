@@ -19,12 +19,12 @@
   height: 8rem;
   border: 2px solid #fff;
   border-radius: 12px;
-  rotate: -10deg;
+  rotate: 5deg;
   display: inline-block;
 }
 
 .blog-image:hover {
-  rotate: 10deg;
+  rotate: -5deg;
 }
 
 .blog-title,
@@ -55,7 +55,18 @@
 .post-card-container {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 2rem;
+  row-gap: 2rem;
+  column-gap: 4rem;
+}
+
+.post-link,
+.post-link:visited {
+  cursor: pointer;
+  text-decoration: none;
+}
+.post-link:hover,
+.post-link:active {
+  box-shadow: 2px 5px 10px rgba(0,0,0, 0.26);
 }
 
 .post-card {
@@ -63,34 +74,89 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  /* width: 30%; */
+  gap: 1rem;
   border: none;
   border-radius: 12px;
   box-shadow: 0px 2px 8px rgba(0,0,0, 0.26);
   padding: 1.5rem;
+
+  width: 13rem;
+  height: 18rem;
 }
 
-.post-card:hover {
-  box-shadow: 2px 5px 10px rgba(0,0,0, 0.26);
-}
-
-.post-img {
-  width: 4rem;
-  height: 4rem;
+.post-card-img {
+  width: 5rem;
+  height: 5rem;
   border-radius: 100%;
 }
 
-.post-title {
+.post-card-title {
   margin: 0.5rem 0;
+  color: #333;
 }
 
-.post-desc {
+.post-card-desc {
   font-size: 0.8rem;
+  color: #535353;
 }
 
 /* POST PART */
+.post-section {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.post-nav {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 2rem 4rem ;
+  background-color: #a628fa;
+  border-radius: 12px;
+}
+
+.post-title {
+  color: #fff;
+  font-size: 3rem;
+}
+
+.post-desc {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.post-image {
+  width: 8rem;
+  height: 8rem;
+  border: 2px solid #fff;
+  border-radius: 12px;
+  rotate: 5deg;
+  display: inline-block;
+}
+
+.post-author,
+.post-created {
+  align-self: start;
+  font-size: 0.8rem;
+  color: #dfdfdf;
+}
+
+.post-content {
+  width: 80%;
+  margin: 3rem 0;
+  border-radius: 12px;
+  padding: 2rem;
+  box-shadow: 0px 2px 8px rgba(0,0,0, 0.26);
+}
+
+/* COMMENT PART */
 .comment {
-  width: 60%;
+  width: 80%;
   display: flex;
   align-items: center;
   justify-content: space-around;
@@ -129,8 +195,14 @@
 }
 
 
-.comment-form label {
+.comment-form label,
+.comment-form textarea
+ {
   display: block;
+}
+
+.comment-form label {
+  margin-bottom: 0.5rem;
 }
 
 .comment-form input,

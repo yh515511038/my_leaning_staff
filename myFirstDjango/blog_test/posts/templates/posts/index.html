@@ -22,23 +22,15 @@
   <div class="latest-posts">
     <h2>Latest Posts</h2>
     <div class="post-card-container">
-      <div class="post-card">
-        <img src="{% static 'posts/mountains.jpg' %}" alt="post-img" class="post-img">
-        <h3 class="post-title">Hello Django!</h3>
-        <p class="post-desc">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eum itaque praesentium neque laboriosam voluptatum commodi consequatur incidunt assumenda omnis magni. Odit error perspiciatis quaerat consequatur cumque quos animi modi placeat.</p>
-      </div>
-
-      <div class="post-card">
-        <img src="{% static 'posts/mountains.jpg' %}" alt="post-img" class="post-img">
-        <h3 class="post-title">Hello Django!</h3>
-        <p class="post-desc">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eum itaque praesentium neque laboriosam voluptatum commodi consequatur incidunt assumenda omnis magni. Odit error perspiciatis quaerat consequatur cumque quos animi modi placeat.</p>
-      </div>
-
-      <div class="post-card">
-        <img src="{% static 'posts/mountains.jpg' %}" alt="post-img" class="post-img">
-        <h3 class="post-title">Hello Django!</h3>
-        <p class="post-desc">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eum itaque praesentium neque laboriosam voluptatum commodi consequatur incidunt assumenda omnis magni. Odit error perspiciatis quaerat consequatur cumque quos animi modi placeat.</p>
-      </div>
+      {% for post in posts %}
+      <a class="post-link" href="{% url 'post' post.id %}">
+        <div class="post-card">
+          <img src="{{ post.image.url }}" alt="post-img" class="post-card-img">
+          <h3 class="post-card-title">{{ post.title }}</h3>
+          <p class="post-card-desc">{{ post.desc }}</p>
+        </div>
+      </a>
+      {% endfor %}
     </div>
 {% endblock %}
 </div>
