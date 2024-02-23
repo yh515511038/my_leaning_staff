@@ -23,7 +23,7 @@
     <h2 class="latest-title">Latest Posts</h2>
     <div class="post-card-container">
       {% for post in posts %}
-      <a class="post-link" href="{% url 'post' post.id %}">
+      <a class="post-link" href="{{ post.get_absolute_url }}">
         <div class="post-card">
           <img src="{{ post.image.url }}" alt="post-img" class="post-card-img">
           <h3 class="post-card-title">{{ post.title }}</h3>
