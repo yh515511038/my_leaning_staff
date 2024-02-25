@@ -16,7 +16,7 @@ class Post(models.Model):
     return f"{self.title} - {self.author}"
   
   def get_absolute_url(self):
-      return reverse("post_detail", kwargs={"pk": self.pk})
+      return reverse("post_detail", kwargs={"slug": self.slug})
   
   
   @classmethod
@@ -26,6 +26,11 @@ class Post(models.Model):
   @classmethod
   def get_by_id(self, pk):
     return Post.objects.get(pk=pk)
+  
+  @classmethod
+  def get_by_slug(self, slug):
+    print(f"slug_name: {slug}")
+    return Post.objects.get(slug=slug)
   
   @classmethod
   def get_all_by_time(self):

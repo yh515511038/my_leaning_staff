@@ -8,7 +8,7 @@ from django.views.generic import ListView, DetailView
 from django.views.generic.edit import CreateView
 from django.contrib.messages.views import SuccessMessageMixin
 
-from .models import Post, Comment, Tag
+from .models import Post, Comment, Tag, Author
 from .forms import PostForm, CommentForm
 
 
@@ -145,3 +145,13 @@ class AddPost(SuccessMessageMixin, CreateView):
 
     def get_success_url(self):
         return reverse('add_post')
+
+
+class AuthorPostsView(View):
+  def get(self, request, id):
+    author = Author.get_by_id(id)
+    posts = Post.get_by_author(author=author)
+    return render(request, "posts/author_posts.html", {
+      "posts": posts,
+      "author": author,
+    })

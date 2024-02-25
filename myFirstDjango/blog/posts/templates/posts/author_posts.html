@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{%block css_file %}
+    <link rel="stylesheet" href="{% static 'posts/post_card.css' %}">
+{% endblock %}
+
+{% block title %}{% endblock %}
+
+{% block content %}
+<h1>{{ author }}'s Posts</h1>
+  {% include "posts/includes/post_card.html" %}
+{% endblock %}

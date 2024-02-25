@@ -162,16 +162,21 @@
 .comment {
   width: 80%;
   display: flex;
-  align-items: center;
-  justify-content: space-around;
+  align-items: start;
+  justify-content: space-between;
   gap: 3rem;
 
   border: none;
   border-radius: 12px;
   box-shadow: 0px 2px 8px rgba(0,0,0, 0.26);
-  padding: 2rem 3rem;
+  padding: 2rem 4rem;
 
   position: relative;
+}
+
+.comment-list,
+.comment-form {
+  margin-top: 3rem;
 }
 
 .comment-title {
@@ -182,11 +187,26 @@
 
 .comment-list {
   list-style: none;
-
+  width: 30%;
 }
 
 .comment-item {
-  margin-bottom: 0.8rem;
+  margin-bottom: 1rem;
+  border-bottom: 1px solid #333;
+}
+
+.comment-item:last-child {
+  border-bottom: none;
+}
+
+.comment-username {
+  margin-bottom: 0.5rem;
+}
+
+.comment--content {
+  display: inline-block;
+  color:  #333;
+  margin-bottom: 0.5rem;
 }
 
 .comment-leave-title {
