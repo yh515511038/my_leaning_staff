@@ -1,1 +1,17 @@
 myFirstDjango/django-env
+
+
+myFirstFlask/flaskblog/.venv
+
+myFirstFlask/flaskblog/*.pyc
+myFirstFlask/flaskblog/__pycache__/
+
+myFirstFlask/flaskblog/instance/
+
+myFirstFlask/flaskblog/.pytest_cache/
+myFirstFlask/flaskblog/.coverage
+myFirstFlask/flaskblog/htmlcov/
+
+myFirstFlask/flaskblog/dist/
+myFirstFlask/flaskblog/build/
+myFirstFlask/flaskblog/*.egg-info/
