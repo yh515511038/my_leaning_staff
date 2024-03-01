@@ -11,7 +11,17 @@
    
         <nav>
             <a href="{{ url_for('main.home') }}" class="nav-item">Home</a>
-            <a href="{{ url_for('main.login') }}" class="nav-item">Login</a>
+            {% if current_user.is_authenticated %}
+                <div>
+                    <a href="{{ url_for('main.account') }}" class="nav-item">{{ current_user.username }}</a>
+                    <a href="{{ url_for('main.logout') }}" class="nav-item">Logout</a>
+                </div>
+            {% else %}
+                <div>
+                    <a href="{{ url_for('main.login') }}" class="nav-item">Login</a>
+                    <a href="{{ url_for('main.register') }}" class="nav-item">Register</a>
+                </div>
+            {% endif %}
         </nav>
 
         <div class="container">

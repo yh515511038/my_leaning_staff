@@ -14,7 +14,7 @@ nav {
     width: 100%;
     display: flex;
     align-items: center;
-    /* justify-content: center; */
+    justify-content: space-between;
     gap: 2rem;
     padding: 0 5rem;
     background-color: #6b00cf;
@@ -22,7 +22,8 @@ nav {
 
 .nav-item {
     display: inline-block;
-    padding: 0.5rem 1.5rem;
+    padding: 0.5rem 1.2rem;
+    margin-right: 0.5rem;
     font-size: 1rem;
     background-color: #ececec;
     text-decoration: none;
@@ -35,12 +36,20 @@ nav {
     background-color: #fff;
 }
 
+.nav-item:last-child {
+    margin-right: 0;
+}
+
 .container {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     margin: 3rem;
+}
+
+.flashes {
+    margin-bottom: 1rem;
 }
 
 .flashes li {
@@ -52,9 +61,13 @@ nav {
 }
 
 .flashes .success {
-    background-color: #00dd00;
+    background-color: #baebff;
 }
 
 .flashes .warning {
-    background-color: #ff8c8c;
+    background-color: #f9a9a9;
+}
+
+.flashes .info {
+    background-color: #b5fee0;
 }
