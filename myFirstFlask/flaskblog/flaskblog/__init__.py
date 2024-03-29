@@ -4,6 +4,7 @@ from flask_sqlalchemy import SQLAlchemy
 from flask_migrate import Migrate
 from flask_bcrypt import Bcrypt
 from flask_login import LoginManager
+
 from flaskblog.config import Config
 
 
@@ -13,6 +14,9 @@ migrate = Migrate()
 bcrypt = Bcrypt()
 login_manager = LoginManager()
 
+# Import to build model relationships between different blueprint
+from flaskblog.users.models import User
+from flaskblog.posts.models import Post
 
 def create_app(config_class=Config):
     app = Flask(__name__, instance_relative_config=True)

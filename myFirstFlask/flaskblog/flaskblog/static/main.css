@@ -1,0 +1,13 @@
+.register-text {
+    font-size: 0.8rem;
+    color: #6e6e6e;
+}
+
+.register-text a {
+    text-decoration: none;
+    color: skyblue;
+}
+
+.register-text a:hover {
+    color: rgb(73, 183, 226);
+}

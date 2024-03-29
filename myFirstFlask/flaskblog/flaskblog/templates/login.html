@@ -1,6 +1,6 @@
 {% extends 'base.html' %}
 
-{% block css_file %}<link rel="stylesheet" href="{{ url_for('static', filename='login.css') }}">{% endblock %}
+{% block css_file %}<link rel="stylesheet" href="{{ url_for('static', filename='main.css') }}">{% endblock %}
 {% block title %}Login Page{% endblock %}
 
 {% block content %}
@@ -8,18 +8,18 @@
         <h2 class="card-title">Login</h2>
         <form class="login-form" action="" method="POST">
             {{ form.csrf_token }}
-            <div class="form-control">
+            <div class="form-group">
                 {{ form.username.label }}
-                {{ form.username }}
+                {{ form.username(class="form-control mb-2") }}
                 {% if form.username.errors %}
                     {% for error in form.username.errors %}
                         <div class="form-invalid">{{ error }}</div>
                     {% endfor %}
                 {% endif %}
             </div>
-            <div class="form-control">
+            <div class="form-group">
                 {{ form.password.label }}
-                {{ form.password }}
+                {{ form.password(class="form-control mb-2") }}
                 {% if form.password.errors %}
                     {% for error in form.password.errors %}
                         <div class="form-invalid">{{ error }}</div>
@@ -28,12 +28,12 @@
             </div>
 
             <div class="form-remember">
-                {{ form.remember }}
+                {{ form.remember(class="mb-2") }}
                 {{ form.remember.label }}
             </div>
 
-            <div class="form-control">
-                {{ form.submit }}
+            <div class="form-group">
+                {{ form.submit(class="btn btn-dark") }}
             </div>
         </form>
         <span class="register-text">Does not have a account? <a href="{{ url_for('main.register') }}">Register</a></span>

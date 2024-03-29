@@ -1,0 +1,27 @@
+.profile-info {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.profile-image {
+  width: 5rem;
+  height: 5rem;
+  border-radius: 100%;
+}
+
+.profile-author {
+  margin-bottom: 0;
+}
+
+.profile-email {
+  font-size: 0.8rem;
+  color: #727272;
+}
+
+.account-info {
+  font-size: 1rem;
+  width: 100%;
+  border-bottom: 1px solid #727272;
+}

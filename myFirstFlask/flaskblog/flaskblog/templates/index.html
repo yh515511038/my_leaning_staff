@@ -3,5 +3,23 @@
 {% block title %}Home Page{% endblock %}
 
 {% block content %}
-    <h1>Hello World!</h1>
+    {% for post in posts %}
+        <div class="post-card">
+            <div class="post-card-left">
+                <img src="{{ url_for('static', filename='profile_pics/' + current_user.image_file ) }}" alt="" class="post-author-image">
+                <div class="post-area">
+                    <div class="post-info">
+                        <a href="#" class="post-author-link">{{ post.author.username }}</a>
+                        <small class="post-date">{{ post.date_posted.strftime('%Y-%m-%d') }}</small>
+                    </div>
+                    <div class="post-content-area">
+                        <h3><a href="{{ url_for('posts.post', id=post.id) }}" class="post-link">{{ post.title }}</a></h3>
+                        <p class="post-content">{{ post.content }}</p>
+                    </div>
+                </div>
+            </div>
+           
+            <div class="post-card-right"></div>
+        </div>
+    {% endfor %}
 {% endblock %}

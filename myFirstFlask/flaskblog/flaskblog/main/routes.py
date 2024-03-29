@@ -1,9 +1,10 @@
 import os
 from flask import Blueprint, render_template, flash, redirect, url_for, request
-from flask_login import login_user, current_user, logout_user, login_required
+from flask_login import login_user, current_user, logout_user
 from flaskblog import bcrypt, db
 from flaskblog.main.forms import RegisterForm, LoginForm
 from flaskblog.users.models import User
+from flaskblog.posts.models import Post
 
 
 main = Blueprint('main', __name__)
@@ -11,7 +12,8 @@ main = Blueprint('main', __name__)
 @main.route("/")
 @main.route("/home")
 def home():
-    return render_template("index.html")
+    posts = Post.get_all_posts()
+    return render_template("index.html", posts=posts)
 
 
 @main.route("/register", methods=['GET', 'POST'])
@@ -47,8 +49,8 @@ def login():
         if user and bcrypt.check_password_hash(user.password, form.password.data):
             login_user(user, remember=form.remember.data)
             flash(f"Welcome back, {user.username.capitalize()}!", "success")
-            next_page = os.path.basename(request.args.get("next"))            
-            return redirect(url_for(f"main.{next_page}")) if next_page else redirect(url_for('main.home'))
+            next_page = request.args.get("next")
+            return redirect(url_for(f"users.{os.path.basename(next_page)}")) if next_page else redirect(url_for('main.home'))
         else:
             flash(f"Username or password is invalid, please check!", "warning")
     return render_template("login.html", form=form)
@@ -58,8 +60,3 @@ def login():
 def logout():
     logout_user()
     return redirect(url_for('main.home'))
-
-@main.route("/account")
-@login_required
-def account():
-    return render_template("account.html")

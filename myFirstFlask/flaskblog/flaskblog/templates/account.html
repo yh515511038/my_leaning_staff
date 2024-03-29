@@ -1,7 +1,53 @@
 {% extends 'base.html' %}
 
+{% block css_file %}<link rel="stylesheet" href="{{ url_for('static', filename='users.css') }}">{% endblock %}
 {% block title %}Account Page{% endblock %}
 
 {% block content %}
-  <h1>{{ current_user.username }}</h1>
+  <div class="card">
+    <h2 class="card-title">Update Profile</h2>
+    <div class="profile-info">
+      <img src="{{ url_for('static', filename='profile_pics/' + current_user.image_file) }}" alt="" class="profile-image">
+      <div class="profile-author-email">
+        <h3 class="profile-author">{{ current_user.username }}</h3>
+        <span class="profile-email">{{ current_user.email }}</span>
+      </div>
+    </div>
+    <span class="account-info">Account Info</span>
+    <form class="login-form" action="" method="POST" enctype="multipart/form-data">
+        {{ form.csrf_token }}
+        <div class="form-group">
+            {{ form.username.label }}
+            {{ form.username(class="form-control mb-2") }}
+            {% if form.username.errors %}
+                {% for error in form.username.errors %}
+                    <div class="form-invalid">{{ error }}</div>
+                {% endfor %}
+            {% endif %}
+        </div>
+        <div class="form-group">
+            {{ form.email.label }}
+            {{ form.email(class="form-control mb-2") }}
+            {% if form.email.errors %}
+                {% for error in form.email.errors %}
+                    <div class="form-invalid">{{ error }}</div>
+                {% endfor %}
+            {% endif %}
+        </div>
+
+        <div class="form-group">
+          {{ form.image_file.label }}
+          {{ form.image_file(class="form-control mb-4") }}
+          {% if form.image_file.errors %}
+              {% for error in form.image_file.errors %}
+                  <div class="form-invalid">{{ error }}</div>
+              {% endfor %}
+          {% endif %}
+      </div>
+
+        <div class="form-group">
+            {{ form.submit(class="btn btn-dark") }}
+        </div>
+    </form>
+  </div>
 {% endblock %}
